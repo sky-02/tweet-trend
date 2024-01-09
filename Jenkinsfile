@@ -1,6 +1,6 @@
 def registry = 'https://aparmar.jfrog.io'
 def imageName = 'aparmar.jfrog.io/aparmar-docker-local/ttrend'
-def version   = '2.1.4'
+def version   = '2.1.5'
 pipeline {
     agent {
         node {
