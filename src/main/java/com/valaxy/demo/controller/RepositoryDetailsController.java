@@ -33,8 +33,8 @@ public class RepositoryDetailsController {
 	@RequestMapping("/")
 	public String getRepos() throws IOException {
 		GitHub github = new GitHubBuilder().withPassword("valaxytech@gmail.com", "XXXXXXXX").build();
-		GHRepositorySearchBuilder builder = github.searchRepositories();
-		return "My first Project on EKS";
+		GHRepositorySearchBuilder builder = github.search repositories();
+		return "My first Project on EKS Kubernetes";
 	}
 
 	@GetMapping("/trends")
