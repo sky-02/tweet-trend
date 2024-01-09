@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: valaxy-rtp
-  namespace: valaxy
+  namespace: aparmar
 spec:
   replicas: 2
   selector:
@@ -14,10 +14,10 @@ spec:
         app:  valaxy-rtp
     spec:
       imagePullSecrets:
-      - name: jfrogcred 
+      - name: jfrogcred
       containers:
       - name:  valaxy-rtp
-        image: valaxy05.jfrog.io/valaxy-docker/ttrend:2.1.4
+        image: aparmar.jfrog.io/aparmar-docker-local/ttrend:2.1.4
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
