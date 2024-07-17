@@ -16,6 +16,16 @@ environment {
             }
         }
     }
+    stage('SonarQube analysis') {
+        environment {
+          scannerHome = tool 'sonar-scanner'
+        }
+        steps{
+            withSonarQubeEnv('sonar-server') { // If you have configured more than one global server connection, you can specify its name
+              sh "${scannerHome}/bin/sonar-scanner"
+            }
+        }
+  }    
 }
 // def registry = 'https://aparmar.jfrog.io'
 // def imageName = 'aparmar.jfrog.io/aparmar-docker-local/ttrend'
