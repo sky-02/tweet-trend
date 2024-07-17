@@ -8,7 +8,7 @@ environment {
     PATH = "/opt/apache-maven-3.9.4/bin:$PATH"
 }    
     stages {
-        stage('build-code-stage') {
+        stage('build-stage') {
             steps {
                  echo "----------- build started ----------"
                 sh 'mvn clean deploy -Dmaven.test.skip=true'
