@@ -4,10 +4,15 @@ pipeline {
             label 'maven'
         }
     }
+environment {
+    PATH = "/opt/apache-maven-3.9.4/bin:$PATH"
+}    
     stages {
-        stage('Clone Code') {
+        stage('build') {
             steps {
-                git branch: 'main', url: 'https://github.com/sky-02/tweet-trend.git'
+                 echo "----------- build started ----------"
+                sh 'mvn clean deploy -Dmaven.test.skip=true'
+                 echo "----------- build complted ----------"
             }
         }
     }
